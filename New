@@ -1,0 +1,7 @@
+import { useEffect, useState } from "react"; import { ConnectButton } from "@rainbow-me/rainbowkit"; import { ethers } from "ethers"; import { Card, CardContent } from "@/components/ui/card"; import { Button } from "@/components/ui/button"; import { CountdownCircleTimer } from "react-countdown-circle-timer"; import Lottie from "lottie-react"; import gmAnimation from "./assets/gm-animation.json"; import teaLogo from "./assets/tea-logo.png";
+
+export default function GMApp() { const [gmCount, setGmCount] = useState(0); const [streak, setStreak] = useState(0); const [canGM, setCanGM] = useState(true); const [nextGMTime, setNextGMTime] = useState(Date.now() + 86400000); const [gmHistory, setGmHistory] = useState([]);
+
+// Dummy data fetch simulation useEffect(() => { setGmCount(1024); setStreak(5); setGmHistory([ { user: "0xA...1234", message: "GM!" }, { user: "0xB...5678", message: "Morning sunshine!" }, ]); }, []);
+
+const handleGM = () => { setGmCount((prev) => prev + 1); setStreak
